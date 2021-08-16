@@ -30,8 +30,6 @@ const actions = {
           const me = response.data
           const role = me.roles[0]
           commit('SET_ME', me)
-          console.log(me)
-          console.log(role)
 
           axios.get(`${API_VERSION}/roles/${role.id}/permissions`)
             .then(response => {
