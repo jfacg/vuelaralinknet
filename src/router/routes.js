@@ -1,6 +1,9 @@
 import usersRoutes from './../modules/users/router/usersRoutes'
 import roleRoutes from './../modules/roles/router/rolesRoutes'
 import permissionRoutes from './../modules/permissions/router/permissionsRoutes'
+import projectRoutes from './../modules/projects/router/projectsRoutes'
+import boxRoutes from './../modules/boxes/router/boxesRoutes'
+import portRoutes from './../modules/ports/router/portsRoutes'
 
 const Auth = () => import('./../modules/Layout/views/AuthLayout')
 const App = () => import('./../modules/Layout/views/AppLayout')
@@ -36,7 +39,10 @@ export default [
       },
       ...usersRoutes,
       ...roleRoutes,
-      ...permissionRoutes
+      ...permissionRoutes,
+      ...projectRoutes,
+      ...boxRoutes,
+      ...portRoutes
 
     ]
   }

@@ -5,6 +5,9 @@ import auth from './../modules/auth/store'
 import users from './../modules/users/store'
 import roles from './../modules/roles/store'
 import permissions from './../modules/permissions/store'
+import projects from './../modules/projects/store'
+import boxes from './../modules/boxes/store'
+import ports from './../modules/ports/store'
 
 Vue.use(Vuex)
 
@@ -13,6 +16,9 @@ export default new Vuex.Store({
     auth,
     users,
     roles,
-    permissions
+    permissions,
+    projects,
+    boxes,
+    ports
   }
 })

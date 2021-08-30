@@ -64,7 +64,8 @@ export default {
       { title: 'Dashboard', icon: 'dashboard', url: '/dashboard', exact: true, permission: '' },
       { title: 'Usuários', icon: 'how_to_reg', url: '/users', exact: true, permission: 'admin' },
       { title: 'Função', icon: 'contact_page', url: '/roles', exact: true, permission: 'admin' },
-      { title: 'Permissões', icon: 'lock', url: '/permissions', exact: true, permission: 'admin' }
+      { title: 'Permissões', icon: 'lock', url: '/permissions', exact: true, permission: 'admin' },
+      { title: 'Projetos FTTH', icon: 'construction', url: '/projects', exact: true, permission: 'project' }
     ],
     mini: false
 
@@ -83,9 +84,12 @@ export default {
     ]),
 
     verifyPermissions (item) {
-      let result = true
+      let result = false
       this.rolePermissions.forEach(permission => {
-        permission.name === item || item === '' ? result = true : result = false
+        if (permission.name === item || item === '') {
+          result = true
+          return result
+        }
       })
       return result
     }
