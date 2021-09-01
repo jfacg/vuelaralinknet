@@ -34,6 +34,13 @@
                     label="Endereço"
                     type="text"
                     v-model.trim="box.address"
+                    @input="toUpperCase(box.address)"
+                  ></v-text-field>
+                  <v-text-field
+                    name="signal"
+                    label="Sinal"
+                    type="number"
+                    v-model="box.signal"
                   ></v-text-field>
                   <v-btn
                     color="primary"
@@ -80,6 +87,7 @@ export default {
       name: '',
       address: '',
       numberPorts: '',
+      signal: '',
       status: ''
     },
     show1: false,
@@ -128,6 +136,10 @@ export default {
             })
           })
       }
+    },
+
+    toUpperCase (text) {
+      this.box.address = text.toUpperCase()
     }
 
   }

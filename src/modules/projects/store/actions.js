@@ -22,12 +22,18 @@ const actions = {
   },
 
   async getClientIXC ({ commit, dispatch }, params) {
-    return await axios.get(`${API_VERSION}/clientIxc/${params.id}`, params)
-      .then(response => {
-        const clientIxc = response.data
-        commit('SET_CLIENTIXC', clientIxc)
-        return response.data
-      })
+    return await new Promise((resolve, reject) => {
+      axios.get(`${API_VERSION}/clientIxc/${params.id}`, params)
+        .then(response => {
+          const clientIxc = response.data
+          commit('SET_CLIENTIXC', clientIxc)
+          return resolve(response.data)
+        })
+        .catch(error => {
+          console.log(error)
+          return reject(error.response)
+        })
+    })
   },
 
   async destroyProject ({ commit, dispatch }, params) {

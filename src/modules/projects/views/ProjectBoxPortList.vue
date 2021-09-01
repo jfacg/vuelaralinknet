@@ -171,6 +171,7 @@ export default {
         this.newBox = this.box
       })
     }
+    console.log(this.box)
     this.items[2].to.params = { id: this.box.project_id }
   },
 

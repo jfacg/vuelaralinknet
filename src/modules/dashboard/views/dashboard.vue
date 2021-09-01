@@ -61,14 +61,14 @@ export default {
         this.counts.projects = this.projects.length
         this.projects.forEach(project => {
           this.counts.boxes.total = this.counts.boxes.total + project.numberBoxes
-          this.counts.ports.total = this.counts.ports.total + project.numberBoxPorts
+          this.counts.ports.total = this.counts.ports.total + (project.numberBoxes * project.numberBoxPorts)
 
           project.boxes.forEach(box => {
             if (box.status === 'ATIVA') {
               this.counts.boxes.ativa = this.counts.boxes.ativa + 1
             }
             box.ports.forEach(port => {
-              if (port.status === 'ATIVA') {
+              if (port.status === 'ATIVA' || port.status === 'OCUPADA') {
                 this.counts.ports.ativa = this.counts.ports.ativa + 1
               }
             })

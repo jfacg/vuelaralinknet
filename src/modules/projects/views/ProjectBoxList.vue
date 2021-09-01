@@ -42,6 +42,9 @@
                       Endereço
                     </th>
                     <th class="text-left">
+                      Sinal
+                    </th>
+                    <th class="text-left">
                       Status
                     </th>
                     <th class="text-left">
@@ -59,6 +62,7 @@
                   >
                     <td>{{ box.name }}</td>
                     <td>{{ box.address }}</td>
+                    <td>{{ box.signal }}</td>
                     <td>{{ box.status }}</td>
                     <td>
                       <router-link :to="{name:'projectBoxesPorts', params: {id:box.id} }">{{box.numberPorts}}</router-link>

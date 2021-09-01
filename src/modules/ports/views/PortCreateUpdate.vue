@@ -132,11 +132,8 @@ export default {
         if (this.port.cableCode !== '') {
           this.port.status = 'ATIVA'
         } else {
-          this.port.status = 'PROJETADA'
+          this.port.status = 'VAGA'
         }
-        // if (this.box.address === '') {
-        //   this.box.address = '.'
-        // }
         this.updatePort(this.port)
           .then(response => {
             this.$router.push({ name: 'projectBoxesPorts', params: { id: this.port.box_id } })
